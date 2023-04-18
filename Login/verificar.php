@@ -8,7 +8,7 @@
 
             if(isset($emailLogin) && isset($senhaLogin)){
                 if(str_contains($texto , $emailLogin) && str_contains($texto , $senhaLogin)){
-                    echo "<p>Seja bem vindo(a) ao site!</p>";    
+                    echo "<h2>Seja bem vindo(a) ao site!</h2>";    
                 }else{
                     echo "Seu cadastro não foi encontrado.";
                 }
@@ -37,27 +37,18 @@
     <div class="container text-center">
         <div class="box">
             <div class="col">
-                <h2>Verificador de conta...</h2>
+                <h2>Verificador de conta...</h2><br>
             </div>
             <form action="cadastrado.php" method="POST">
-                <div class="col">
-                    <label for="email" class="formulario__titulos">Email: </label><br>
-                    <input type="email" pattern=".+@gmail.com" name="emailLogin" id="email" required><br>
-                </div>
-                <div class="col">
-                <label for="senha" class="formulario__titulos--senha">Senha: </label><br>
-                <label for="senha" class="formulario__titulos">(mínimo com 8 caracteres)</label><br>
-                <input type="password" minlength="8" name="senhaLogin" id="" placeholder="********" required><br>
-                </div>
-                <div class="col">
-                    <br><a href="index.php" class="link">Não tem cadastro?</a>
-                </div>
                 <?php 
                     require_once('verificar.php');
                     $emailLogin = $_POST['emailLogin'];
                     $senhaLogin = $_POST['senhaLogin'];
                     verificar($emailLogin, $senhaLogin)
                 ?>
+            <div class="col">
+            <br><a href="index.php" class="link">Não tem cadastro ainda?</a>
+            </div>    
             </form>
         </div>
     </div>
