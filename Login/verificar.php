@@ -8,15 +8,15 @@
 
             if(isset($emailLogin) && isset($senhaLogin)){
                 if(str_contains($texto , $emailLogin) && str_contains($texto , $senhaLogin)){
-                    echo "<p class='login__resposta'>Bem vindo/a ao site</p>";    
+                    echo "<p>Seja bem vindo(a) ao site!</p>";    
                 }else{
-                    echo "Registro não encontrado";
+                    echo "Seu cadastro não foi encontrado.";
                 }
             }else{
-                echo "Não conseguimos receber sua senha e/ou email cadastrado";
+                echo "Sua senha e/ou email cadastrados não foram encontrados, tente novamente!";
             }
         }else{
-            echo "Nenhum registro foi encontrado no sistema";
+            echo "Nenhum cadastro com essa senha e/ou email foram encontrados no sistema.";
         }
     }
 ?>
